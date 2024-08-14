@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Button, StyleSheet, Image, Dimensions } from "react-native";
+import { View, StyleSheet, Image, Dimensions } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
 const PollingStationScreen = () => {
@@ -7,78 +7,450 @@ const PollingStationScreen = () => {
   const [discipline, setDiscipline] = useState("");
 
   const disciplinesArr = {
-    punjab: [
-      "Civil/Architectural/Ecological",
-      "Transport/Environmental/Urban/Ocean",
-      "Mechanical",
-      "Mecantro/Indus/Nuclear/Textile/Automotive",
-      "Metal/Agricultural/Mining/Pet-gas",
-      "Chemical/Polymer/Food",
-      "Computer",
-      "Telecom/Aero/Avionics",
-      "Electronics/Engg Science",
-      "Electrical/Bio-Medical/Energy",
-    ],
-    sindh: [
-      "Civil/Architectural/Ecological",
-      "Transport/Environmental/Urban/Ocean",
-      "Mechanical",
-      "Mecantro/Indus/Nuclear/Textile/Automotive",
-      "Metal/Agricultural/Mining/Pet-gas",
-      "Chemical/Polymer/Food",
-      "Computer",
-      "Telecom/Aero/Avionics",
-      "Electronics/Engg Science",
-      "Electrical/Bio-Medical/Energy",
-    ],
-    kpk: [
-      "Civil/Architectural/Ecological",
-      "Transport/Environmental/Urban/Ocean",
-      "Mechanical",
-      "Mecantro/Indus/Nuclear/Textile/Automotive",
-      "Metal/Agricultural/Mining/Pet-gas",
-      "Chemical/Polymer/Food",
-      "Computer",
-      "Telecom/Aero/Avionics",
-      "Electronics/Engg Science",
-      "Electrical/Bio-Medical/Energy",
-    ],
-    baloch: [
-      "Civil/Architectural/Ecological",
-      "Transport/Environmental/Urban/Ocean",
-      "Mechanical",
-      "Mecantro/Indus/Nuclear/Textile/Automotive",
-      "Metal/Agricultural/Mining/Pet-gas",
-      "Chemical/Polymer/Food",
-      "Computer",
-      "Telecom/Aero/Avionics",
-      "Electronics/Engg Science",
-      "Electrical/Bio-Medical/Energy",
-    ],
-    gb_azk: [
-      "Civil/Architectural/Ecological",
-      "Transport/Environmental/Urban/Ocean",
-      "Mechanical",
-      "Mecantro/Indus/Nuclear/Textile/Automotive",
-      "Metal/Agricultural/Mining/Pet-gas",
-      "Chemical/Polymer/Food",
-      "Computer",
-      "Telecom/Aero/Avionics",
-      "Electronics/Engg Science",
-      "Electrical/Bio-Medical/Energy",
-    ],
+    punjab: {
+      civil: [
+        {
+          name: "Civil/Architectural/Ecological",
+          link: require("../assets/ballot-paper-images/civil_punjab.jpeg"),
+        },
+      ],
+      civil2: [
+        {
+          name: "Transport/Environmental/Urban/Ocean",
+          link: require("../assets/ballot-paper-images/civil2_punjab.jpeg"),
+        },
+      ],
+      mechanical: [
+        {
+          name: "Mechanical",
+          link: require("../assets/ballot-paper-images/mechanical_punjab.jpeg"),
+        },
+      ],
+      mechatronics: [
+        {
+          name: "Mecatro/Indus/Nuclear/Textile/Automotive",
+          link: require("../assets/ballot-paper-images/mechatronics_punjab.jpeg"),
+        },
+      ],
+      metallurgy: [
+        {
+          name: "Metal/Agricultural/Mining/Pet-gas",
+          link: require("../assets/ballot-paper-images/metallurgy_punjab.jpeg"),
+        },
+      ],
+      chemical: [
+        {
+          name: "Chemical/Polymer/Food",
+          link: require("../assets/ballot-paper-images/chemical_punjab.jpeg"),
+        },
+      ],
+      computer: [
+        {
+          name: "Computer",
+          link: require("../assets/ballot-paper-images/computer_punjab.jpeg"),
+        },
+      ],
+      telecom: [
+        {
+          name: "Telecom/Aero/Avionics",
+          link: require("../assets/ballot-paper-images/telecom_punjab.jpeg"),
+        },
+      ],
+      electronics: [
+        {
+          name: "Electronics/Engg Science",
+          link: require("../assets/ballot-paper-images/electronics_punjab.jpeg"),
+        },
+      ],
+      electrical: [
+        {
+          name: "Electrical/Bio-Medical/Energy",
+          link: require("../assets/ballot-paper-images/electrical_punjab.jpeg"),
+        },
+      ],
+    },
+
+    sindh: {
+      civil: [
+        {
+          name: "Civil/Architectural/Ecological",
+          link: require("../assets/ballot-paper-images/civil_sindh.jpeg"),
+        },
+      ],
+      civil2: [
+        {
+          name: "Transport/Environmental/Urban/Ocean",
+          link: require("../assets/ballot-paper-images/civil2_sindh.jpeg"),
+        },
+      ],
+      mechanical: [
+        {
+          name: "Mechanical",
+          link: require("../assets/ballot-paper-images/mechanical_sindh.jpeg"),
+        },
+      ],
+      mechatronics: [
+        {
+          name: "Mecatro/Indus/Nuclear/Textile/Automotive",
+          link: require("../assets/ballot-paper-images/mechatronics_sindh.jpeg"),
+        },
+      ],
+      metallurgy: [
+        {
+          name: "Metal/Agricultural/Mining/Pet-gas",
+          link: require("../assets/ballot-paper-images/metallurgy_sindh.jpeg"),
+        },
+      ],
+      chemical: [
+        {
+          name: "Chemical/Polymer/Food",
+          link: require("../assets/ballot-paper-images/chemical_sindh.jpeg"),
+        },
+      ],
+      computer: [
+        {
+          name: "Computer",
+          link: require("../assets/ballot-paper-images/computer_sindh.jpeg"),
+        },
+      ],
+      telecom: [
+        {
+          name: "Telecom/Aero/Avionics",
+          link: require("../assets/ballot-paper-images/telecom_sindh.jpeg"),
+        },
+      ],
+      electronics: [
+        {
+          name: "Electronics/Engg Science",
+          link: require("../assets/ballot-paper-images/electronics_sindh.jpeg"),
+        },
+      ],
+      electrical: [
+        {
+          name: "Electrical/Bio-Medical/Energy",
+          link: require("../assets/ballot-paper-images/electrical_sindh.jpeg"),
+        },
+      ],
+    },
+
+    kpk: {
+      civil: [
+        {
+          name: "Civil/Architectural/Ecological",
+          link: require("../assets/ballot-paper-images/civil_kpk.jpeg"),
+        },
+      ],
+      civil2: [
+        {
+          name: "Transport/Environmental/Urban/Ocean",
+          link: require("../assets/ballot-paper-images/civil2_kpk.jpeg"),
+        },
+      ],
+      mechanical: [
+        {
+          name: "Mechanical",
+          link: require("../assets/ballot-paper-images/mechanical_kpk.jpeg"),
+        },
+      ],
+      mechatronics: [
+        {
+          name: "Mecatro/Indus/Nuclear/Textile/Automotive",
+          link: require("../assets/ballot-paper-images/mechatronics_kpk.jpeg"),
+        },
+      ],
+      metallurgy: [
+        {
+          name: "Metal/Agricultural/Mining/Pet-gas",
+          link: require("../assets/ballot-paper-images/metallurgy_kpk.jpeg"),
+        },
+      ],
+      chemical: [
+        {
+          name: "Chemical/Polymer/Food",
+          link: require("../assets/ballot-paper-images/chemical_kpk.jpeg"),
+        },
+      ],
+      computer: [
+        {
+          name: "Computer",
+          link: require("../assets/ballot-paper-images/computer_kpk.jpeg"),
+        },
+      ],
+      telecom: [
+        {
+          name: "Telecom/Aero/Avionics",
+          link: require("../assets/ballot-paper-images/telecom_kpk.jpeg"),
+        },
+      ],
+      electronics: [
+        {
+          name: "Electronics/Engg Science",
+          link: require("../assets/ballot-paper-images/electronics_kpk.jpeg"),
+        },
+      ],
+      electrical: [
+        {
+          name: "Electrical/Bio-Medical/Energy",
+          link: require("../assets/ballot-paper-images/electrical_kpk.jpeg"),
+        },
+      ],
+    },
+    baloch: {
+      civil: [
+        {
+          name: "Civil/Architectural/Ecological",
+          link: require("../assets/ballot-paper-images/civil_baloch.jpeg"),
+        },
+      ],
+      civil2: [
+        {
+          name: "Transport/Environmental/Urban/Ocean",
+          link: require("../assets/ballot-paper-images/civil2_baloch.jpeg"),
+        },
+      ],
+      mechanical: [
+        {
+          name: "Mechanical",
+          link: require("../assets/ballot-paper-images/mechanical_baloch.jpeg"),
+        },
+      ],
+      mechatronics: [
+        {
+          name: "Mecatro/Indus/Nuclear/Textile/Automotive",
+          link: require("../assets/ballot-paper-images/mechatronics_baloch.jpeg"),
+        },
+      ],
+      metallurgy: [
+        {
+          name: "Metal/Agricultural/Mining/Pet-gas",
+          link: require("../assets/ballot-paper-images/metallurgy_baloch.jpeg"),
+        },
+      ],
+      chemical: [
+        {
+          name: "Chemical/Polymer/Food",
+          link: require("../assets/ballot-paper-images/chemical_baloch.jpeg"),
+        },
+      ],
+      computer: [
+        {
+          name: "Computer",
+          link: require("../assets/ballot-paper-images/computer_baloch.jpeg"),
+        },
+      ],
+      telecom: [
+        {
+          name: "Telecom/Aero/Avionics",
+          link: require("../assets/ballot-paper-images/telecom_baloch.jpeg"),
+        },
+      ],
+      electronics: [
+        {
+          name: "Electronics/Engg Science",
+          link: require("../assets/ballot-paper-images/electronics_baloch.jpeg"),
+        },
+      ],
+      electrical: [
+        {
+          name: "Electrical/Bio-Medical/Energy",
+          link: require("../assets/ballot-paper-images/electrical_baloch.jpeg"),
+        },
+      ],
+    },
+    azk: {
+      civil: [
+        {
+          name: "Civil/Architectural/Ecological",
+          link: require("../assets/ballot-paper-images/civil_punjab.jpeg"),
+        },
+      ],
+      civil2: [
+        {
+          name: "Transport/Environmental/Urban/Ocean",
+          link: require("../assets/ballot-paper-images/civil2_punjab.jpeg"),
+        },
+      ],
+      mechanical: [
+        {
+          name: "Mechanical",
+          link: require("../assets/ballot-paper-images/mechanical_punjab.jpeg"),
+        },
+      ],
+      mechatronics: [
+        {
+          name: "Mecatro/Indus/Nuclear/Textile/Automotive",
+          link: require("../assets/ballot-paper-images/mechatronics_punjab.jpeg"),
+        },
+      ],
+      metallurgy: [
+        {
+          name: "Metal/Agricultural/Mining/Pet-gas",
+          link: require("../assets/ballot-paper-images/metallurgy_punjab.jpeg"),
+        },
+      ],
+      chemical: [
+        {
+          name: "Chemical/Polymer/Food",
+          link: require("../assets/ballot-paper-images/chemical_punjab.jpeg"),
+        },
+      ],
+      computer: [
+        {
+          name: "Computer",
+          link: require("../assets/ballot-paper-images/computer_punjab.jpeg"),
+        },
+      ],
+      telecom: [
+        {
+          name: "Telecom/Aero/Avionics",
+          link: require("../assets/ballot-paper-images/telecom_punjab.jpeg"),
+        },
+      ],
+      electronics: [
+        {
+          name: "Electronics/Engg Science",
+          link: require("../assets/ballot-paper-images/electronics_punjab.jpeg"),
+        },
+      ],
+      electrical: [
+        {
+          name: "Electrical/Bio-Medical/Energy",
+          link: require("../assets/ballot-paper-images/electrical_punjab.jpeg"),
+        },
+      ],
+    },
+
+    isl: {
+      civil: [
+        {
+          name: "Civil/Architectural/Ecological",
+          link: require("../assets/ballot-paper-images/civil_punjab.jpeg"),
+        },
+      ],
+      civil2: [
+        {
+          name: "Transport/Environmental/Urban/Ocean",
+          link: require("../assets/ballot-paper-images/civil2_punjab.jpeg"),
+        },
+      ],
+      mechanical: [
+        {
+          name: "Mechanical",
+          link: require("../assets/ballot-paper-images/mechanical_punjab.jpeg"),
+        },
+      ],
+      mechatronics: [
+        {
+          name: "Mecatro/Indus/Nuclear/Textile/Automotive",
+          link: require("../assets/ballot-paper-images/mechatronics_punjab.jpeg"),
+        },
+      ],
+      metallurgy: [
+        {
+          name: "Metal/Agricultural/Mining/Pet-gas",
+          link: require("../assets/ballot-paper-images/metallurgy_punjab.jpeg"),
+        },
+      ],
+      chemical: [
+        {
+          name: "Chemical/Polymer/Food",
+          link: require("../assets/ballot-paper-images/chemical_punjab.jpeg"),
+        },
+      ],
+      computer: [
+        {
+          name: "Computer",
+          link: require("../assets/ballot-paper-images/computer_punjab.jpeg"),
+        },
+      ],
+      telecom: [
+        {
+          name: "Telecom/Aero/Avionics",
+          link: require("../assets/ballot-paper-images/telecom_punjab.jpeg"),
+        },
+      ],
+      electronics: [
+        {
+          name: "Electronics/Engg Science",
+          link: require("../assets/ballot-paper-images/electronics_punjab.jpeg"),
+        },
+      ],
+      electrical: [
+        {
+          name: "Electrical/Bio-Medical/Energy",
+          link: require("../assets/ballot-paper-images/electrical_punjab.jpeg"),
+        },
+      ],
+    },
+
+    gb: {
+      civil: [
+        {
+          name: "Civil/Architectural/Ecological",
+          link: require("../assets/ballot-paper-images/civil_kpk.jpeg"),
+        },
+      ],
+      civil2: [
+        {
+          name: "Transport/Environmental/Urban/Ocean",
+          link: require("../assets/ballot-paper-images/civil2_kpk.jpeg"),
+        },
+      ],
+      mechanical: [
+        {
+          name: "Mechanical",
+          link: require("../assets/ballot-paper-images/mechanical_kpk.jpeg"),
+        },
+      ],
+      mechatronics: [
+        {
+          name: "Mecatro/Indus/Nuclear/Textile/Automotive",
+          link: require("../assets/ballot-paper-images/mechatronics_kpk.jpeg"),
+        },
+      ],
+      metallurgy: [
+        {
+          name: "Metal/Agricultural/Mining/Pet-gas",
+          link: require("../assets/ballot-paper-images/metallurgy_kpk.jpeg"),
+        },
+      ],
+      chemical: [
+        {
+          name: "Chemical/Polymer/Food",
+          link: require("../assets/ballot-paper-images/chemical_kpk.jpeg"),
+        },
+      ],
+      computer: [
+        {
+          name: "Computer",
+          link: require("../assets/ballot-paper-images/computer_kpk.jpeg"),
+        },
+      ],
+      telecom: [
+        {
+          name: "Telecom/Aero/Avionics",
+          link: require("../assets/ballot-paper-images/telecom_kpk.jpeg"),
+        },
+      ],
+      electronics: [
+        {
+          name: "Electronics/Engg Science",
+          link: require("../assets/ballot-paper-images/electronics_kpk.jpeg"),
+        },
+      ],
+      electrical: [
+        {
+          name: "Electrical/Bio-Medical/Energy",
+          link: require("../assets/ballot-paper-images/electrical_kpk.jpeg"),
+        },
+      ],
+    },
   };
 
-  const disciplines = province ? disciplinesArr[province] : [];
+  const disciplines = province ? Object.keys(disciplinesArr[province]) : [];
+  const selectedDiscipline =
+    province && discipline ? disciplinesArr[province][discipline] : null;
   const { width, height } = Dimensions.get("window");
-
-  const getImageSource = () => {
-    if (discipline && province) {
-      const imageName = `${discipline.toLowerCase()}_${province.toLowerCase()}.jpeg`;
-      return require(`../assets/ballot-paper-images/${imageName}`);
-    }
-    return null;
-  };
 
   return (
     <View style={styles.container}>
@@ -94,8 +466,10 @@ const PollingStationScreen = () => {
         <Picker.Item label="Punjab" value="punjab" />
         <Picker.Item label="Sindh" value="sindh" />
         <Picker.Item label="KPK" value="kpk" />
-        <Picker.Item label="Balochistan" value="balochistan" />
-        <Picker.Item label="Gilgal B./Azad Kash." value="gb_azk" />
+        <Picker.Item label="Balochistan" value="baloch" />
+        <Picker.Item label="Islamabad" value="isl" />
+        <Picker.Item label="Gilgit-Baltistan" value="gb" />
+        <Picker.Item label="Azad Kashmir" value="azk" />
       </Picker>
 
       <Picker
@@ -105,24 +479,25 @@ const PollingStationScreen = () => {
         enabled={province !== ""}
       >
         <Picker.Item label="Select Discipline" value="" />
-        {disciplines.map((cityName, index) => (
-          <Picker.Item key={index} label={cityName} value={cityName} />
+        {disciplines.map((disciplineKey, index) => (
+          <Picker.Item
+            key={index}
+            label={disciplinesArr[province][disciplineKey][0].name}
+            value={disciplineKey}
+          />
         ))}
       </Picker>
 
-      {discipline ? (
+      {selectedDiscipline && (
         <View>
           <Image
-            source={getImageSource()}
-            style={{ width: width * 1, height: height * 0.6 }}
+            source={selectedDiscipline[0].link}
+            style={{ width: width, height: height * 0.6 }}
             resizeMode="cover"
           />
-          <Button
-            title="Download"
-            onPress={() => console.log("Download image logic here")}
-          />
+          {/* <Button title="Download" onPress={downloadImage} /> */}
         </View>
-      ) : null}
+      )}
     </View>
   );
 };
@@ -132,11 +507,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    padding: 16,
+    backgroundColor: "#fff",
   },
   picker: {
+    width: "80%",
     height: 50,
-    width: 300,
-    marginVertical: 10,
+    backgroundColor: "#e0e0e0",
+    marginBottom: 20,
+    borderRadius: 8,
   },
 });
 
