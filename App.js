@@ -13,21 +13,21 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.button}
+        onPress={() => navigation.navigate("PollingStation")}
+      >
+        <Text style={styles.buttonText}>Locate Polling Station</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
         onPress={() => navigation.navigate("BallotPaper")}
       >
         <Text style={styles.buttonText}>Ballot Paper</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate("PollingStation")}
-      >
-        <Text style={styles.buttonText}>Polling Station</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.button}
         onPress={() => navigation.navigate("Assistance")}
       >
-        <Text style={styles.buttonText}>For Assistance</Text>
+        <Text style={styles.buttonText}>For Help</Text>
       </TouchableOpacity>
     </View>
   );

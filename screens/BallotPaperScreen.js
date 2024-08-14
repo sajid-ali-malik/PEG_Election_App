@@ -495,7 +495,6 @@ const PollingStationScreen = () => {
             style={{ width: width, height: height * 0.6 }}
             resizeMode="cover"
           />
-          {/* <Button title="Download" onPress={downloadImage} /> */}
         </View>
       )}
     </View>
