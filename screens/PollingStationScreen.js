@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Linking } from "react-native";
+import { View, StyleSheet, Linking, Image } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 
 const PollingStationScreen = () => {
@@ -814,6 +814,11 @@ const PollingStationScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Image
+        source={require("../assets/app-images/azadibg.png")}
+        style={styles.topImage}
+      />
+
       <Picker
         selectedValue={province}
         onValueChange={(itemValue) => {
@@ -864,6 +869,11 @@ const PollingStationScreen = () => {
           ))}
         </Picker>
       )}
+
+      <Image
+        source={require("../assets/app-images/bottom.png")}
+        style={styles.bottomImage}
+      />
     </View>
   );
 };
@@ -873,15 +883,32 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     padding: 16,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#D3D3D3",
   },
   picker: {
     height: 50,
     width: "100%",
-    backgroundColor: "#e0e0e0",
+    color: "#fff",
+    backgroundColor: "#1f8c07",
     marginBottom: 16,
     borderRadius: 8,
     paddingHorizontal: 10,
+  },
+  bottomImage: {
+    position: "absolute",
+    bottom: "-23%",
+    left: "-5%",
+    width: "120%",
+    height: "60%",
+    resizeMode: "contain",
+  },
+  topImage: {
+    position: "absolute",
+    top: "3%",
+    left: "13%",
+    width: "80%",
+    height: "40%",
+    resizeMode: "contain",
   },
 });
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BallotPaperScreen from "./screens/BallotPaperScreen";
@@ -11,6 +11,11 @@ const Stack = createNativeStackNavigator();
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
+      <Image
+        source={require("./assets/app-images/WaseemNazir.png")}
+        style={styles.topImage}
+      />
+
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate("PollingStation")}
@@ -21,7 +26,7 @@ const HomeScreen = ({ navigation }) => {
         style={styles.button}
         onPress={() => navigation.navigate("BallotPaper")}
       >
-        <Text style={styles.buttonText}>Ballot Paper</Text>
+        <Text style={styles.buttonText}>Our Panel</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
@@ -29,6 +34,16 @@ const HomeScreen = ({ navigation }) => {
       >
         <Text style={styles.buttonText}>For Help</Text>
       </TouchableOpacity>
+
+      <Image
+        source={require("./assets/app-images/note.png")}
+        style={styles.noteImage}
+      />
+
+      <Image
+        source={require("./assets/app-images/bottom.png")}
+        style={styles.bottomImage}
+      />
     </View>
   );
 };
@@ -40,7 +55,15 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: "Vote For Change, Vote For Waseem Nazir" }}
+          options={{
+            title: "Vote For Waseem Nazir",
+            headerTitleAlign: "center",
+            headerTitleStyle: {
+              fontSize: 28,
+              fontWeight: "bold",
+              color: "#0a430a",
+            },
+          }}
         />
         <Stack.Screen name="BallotPaper" component={BallotPaperScreen} />
         <Stack.Screen name="PollingStation" component={PollingStationScreen} />
@@ -55,9 +78,32 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f8f8f8",
-    padding: 20,
+    backgroundColor: "#D3D3D3",
   },
+  topImage: {
+    position: "absolute",
+    top: "4%",
+    left: "10",
+    width: "60%",
+    height: "30%",
+    resizeMode: "contain",
+  },
+  bottomImage: {
+    position: "absolute",
+    bottom: "-16%",
+    width: "150%",
+    height: "40%",
+    resizeMode: "contain",
+  },
+
+  noteImage: {
+    position: "absolute",
+    bottom: "6%",
+    width: "75%",
+    height: "35%",
+    resizeMode: "contain",
+  },
+
   button: {
     backgroundColor: "#1f8c07",
     paddingVertical: 15,

@@ -454,6 +454,7 @@ const PollingStationScreen = () => {
 
   return (
     <View style={styles.container}>
+      
       <Picker
         selectedValue={province}
         onValueChange={(itemValue) => {
