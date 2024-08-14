@@ -12,19 +12,19 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
-        style={styles.button}
+        style={[styles.button, styles.buttonPrimary]}
         onPress={() => navigation.navigate("PollingStation")}
       >
         <Text style={styles.buttonText}>Locate Polling Station</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.button}
+        style={[styles.button, styles.buttonSecondary]}
         onPress={() => navigation.navigate("BallotPaper")}
       >
         <Text style={styles.buttonText}>Ballot Paper</Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={styles.button}
+        style={[styles.button, styles.buttonTertiary]}
         onPress={() => navigation.navigate("Assistance")}
       >
         <Text style={styles.buttonText}>For Help</Text>
@@ -38,8 +38,9 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
-          name="Vote For Change, Vote For Waseem Nazir"
+          name="Home"
           component={HomeScreen}
+          options={{ title: "Vote For Change, Vote For Waseem Nazir" }}
         />
         <Stack.Screen name="BallotPaper" component={BallotPaperScreen} />
         <Stack.Screen name="PollingStation" component={PollingStationScreen} />
@@ -54,21 +55,31 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f8f8f8",
+    backgroundColor: "#ffffff",
     padding: 20,
   },
   button: {
-    backgroundColor: "#1f8c07",
     paddingVertical: 15,
     paddingHorizontal: 30,
     borderRadius: 8,
     marginVertical: 10,
     width: "80%",
+    alignItems: "center",
+    elevation: 2,
+  },
+  buttonPrimary: {
+    backgroundColor: "#4caf50",
+  },
+  buttonSecondary: {
+    backgroundColor: "#2196f3",
+  },
+  buttonTertiary: {
+    backgroundColor: "#f44336",
   },
   buttonText: {
     color: "#fff",
     fontSize: 18,
     fontWeight: "600",
-    textAlign: "center",
+    textTransform: "uppercase",
   },
 });

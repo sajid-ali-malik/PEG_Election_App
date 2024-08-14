@@ -805,7 +805,6 @@ const PollingStationScreen = () => {
       ],
     },
   };
-
   const cities = province ? Object.keys(provinceCityData[province]) : [];
   const stations = city ? provinceCityData[province][city] : [];
 
@@ -824,13 +823,7 @@ const PollingStationScreen = () => {
         }}
         style={styles.picker}
       >
-        <Picker.Item
-          label="Select Province"
-          style={{
-            backgroundColor: "#1f8c07",
-          }}
-          value=""
-        />
+        <Picker.Item label="Select Province" value="" />
         <Picker.Item label="Punjab" value="punjab" />
         <Picker.Item label="Sindh" value="sindh" />
         <Picker.Item label="KPK" value="kpk" />
@@ -848,11 +841,7 @@ const PollingStationScreen = () => {
           }}
           style={styles.picker}
         >
-          <Picker.Item
-            label="Select City"
-            style={{ backgroundColor: "#1f8c07" }}
-            value=""
-          />
+          <Picker.Item label="Select City" value="" />
           {cities.map((cityName, index) => (
             <Picker.Item key={index} label={cityName} value={cityName} />
           ))}
@@ -865,11 +854,7 @@ const PollingStationScreen = () => {
           onValueChange={(itemValue) => openMap(itemValue.link)}
           style={styles.picker}
         >
-          <Picker.Item
-            label="Select Polling Station"
-            style={{ backgroundColor: "#1f8c07" }}
-            value=""
-          />
+          <Picker.Item label="Select Polling Station" value="" />
           {stations.map((stationData, index) => (
             <Picker.Item
               key={index}
@@ -885,18 +870,18 @@ const PollingStationScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    justifyContent: "center",
     padding: 16,
-    backgroundColor: "#f8f8f8",
-    marginTop: "60%",
-  },
-  label: {
-    fontSize: 16,
-    marginBottom: 8,
+    backgroundColor: "#ffffff",
   },
   picker: {
     height: 50,
     width: "100%",
+    backgroundColor: "#e0e0e0",
     marginBottom: 16,
+    borderRadius: 8,
+    paddingHorizontal: 10,
   },
 });
 
